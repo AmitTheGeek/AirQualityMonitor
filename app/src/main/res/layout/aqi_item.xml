@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View.OnClickListener" />
+        <import type="com.amit.airqualitymonitor.R" />
+        <variable
+            name="aqiEntity"
+            type="com.amit.airqualitymonitor.database.model.Aqi" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:background="@{aqiEntity.color}"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/country_name"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="visible"
+            android:text="@{aqiEntity.city}"
+            android:textColor="@color/black"
+            android:textSize="16.5sp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/aqi"
+            android:layout_height="wrap_content"
+            android:layout_weight=".75"
+            android:visibility="visible"
+            android:text="@{String.valueOf(aqiEntity.aqi)}"
+            android:textColor="@color/black"
+            android:textSize="16.5sp"
+            android:layout_width="0dp" />
+
+        <TextView
+            android:id="@+id/timestamp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.25"
+            android:visibility="visible"
+            android:text="@{aqiEntity.prettyTime}"
+            android:textColor="@color/black"
+            android:textSize="16.5sp"
+            android:layout_width="0dp" />
+    </LinearLayout>
+</layout>
