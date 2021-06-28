@@ -34,7 +34,7 @@ class GraphActivity :AppCompatActivity() {
         city = intent.getStringExtra(CITY) as String
         viewModel = ViewModelProvider(this).get(GraphViewModel::class.java)
         sparkView = findViewById(R.id.sparkview)
-
+        setTitle(city)
         viewModel.getCityAqiData().observe(this, {
             Log.d(TAG, "onCreate: $it")
 

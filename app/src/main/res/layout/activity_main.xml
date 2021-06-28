@@ -13,24 +13,63 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity"
         tools:showIn="@layout/activity_main">
 
+        <LinearLayout
+            android:id="@+id/headers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark15_color"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/city"
+                android:textColor="@color/black"
+                android:textSize="16.5sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/aqi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/current_aqi"
+                android:textColor="@color/black"
+                android:textSize="16.5sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/last_updated"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/last_updated"
+                android:textColor="@color/black"
+                android:textSize="16.5sp"
+                android:visibility="visible" />
+        </LinearLayout>
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/aqiRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:items="@{viewmodel.items}"
+            android:layout_below="@+id/headers"
             android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:items="@{viewmodel.items}" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </layout>
 
 

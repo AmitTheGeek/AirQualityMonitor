@@ -30,7 +30,7 @@
         <TextView
             android:id="@+id/aqi"
             android:layout_height="wrap_content"
-            android:layout_weight=".75"
+            android:layout_weight="1"
             android:visibility="visible"
             android:text="@{String.valueOf(aqiEntity.aqi)}"
             android:textColor="@color/black"
@@ -40,7 +40,7 @@
         <TextView
             android:id="@+id/timestamp"
             android:layout_height="wrap_content"
-            android:layout_weight="1.25"
+            android:layout_weight="1"
             android:visibility="visible"
             android:text="@{aqiEntity.prettyTime}"
             android:textColor="@color/black"
